@@ -8,13 +8,13 @@ export class ChatserviceService {
  
     constructor(private socket: Socket) { }
  
-    sendMessage(msg: string){
-        this.socket.emit("message", msg);
-    }
+    // sendMessage(msg: string){
+    //     this.socket.emit("message", msg);
+    // }
     
     getMessage() {
          return this.socket
-             .fromEvent("details")
+             .fromEvent("incoming message")
              .pipe(map((data: any) => data));
     }
 }
